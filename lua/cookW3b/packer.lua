@@ -23,10 +23,15 @@ return require('packer').startup(function(use)
     end
   }) ]]
   use 'sainnhe/sonokai'
+  use 'savq/melange-nvim'
+  use 'jacoborus/tender.vim'
+  use 'AlexvZyl/nordic.nvim'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use 'rebelot/kanagawa.nvim'
   -- use 'olimorris/onedarkpro.nvim'
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
+  use 'folke/tokyonight.nvim'
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
@@ -64,6 +69,7 @@ return require('packer').startup(function(use)
       { "nvim-treesitter/nvim-treesitter" }
     }
   })
+  use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast128' })
   use {
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
@@ -80,15 +86,16 @@ return require('packer').startup(function(use)
   use('jose-elias-alvarez/null-ls.nvim')
 
   -- Bottom Line --
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  -- use {
+  --   'nvim-lualine/lualine.nvim',
+  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  -- }
+  use 'feline-nvim/feline.nvim'
   -- use 'feline-nvim/feline.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
   use "marko-cerovac/material.nvim"
   use 'numToStr/Comment.nvim'
-  use "lukas-reineke/indent-blankline.nvim"
+  -- use "lukas-reineke/indent-blankline.nvim"
   use "windwp/nvim-autopairs"
   use({
     "kylechui/nvim-surround",

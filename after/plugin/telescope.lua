@@ -2,6 +2,7 @@ local builtin = require('telescope.builtin')
 
 require('telescope').setup {
   defaults = {
+    file_ignore_patterns = { "node%_modules/.*" },
     mappings = {
       i = {
         ["<C-h>"] = "which_key",
@@ -39,10 +40,12 @@ require("telescope").load_extension "file_browser"
 vim.keymap.set('n', '<leader>br', ':Telescope file_browser<cr>')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>FF', ':Telescope find_files hidden=true<cr>')
 vim.keymap.set('n', '<leader>sh', builtin.search_history, {})
 vim.keymap.set('n', '<leader>rr', builtin.resume, {})
 vim.keymap.set('n', '<leader>bb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>FG', ':Telescope live_grep no_ignore=true hidden=true<cr>')
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
