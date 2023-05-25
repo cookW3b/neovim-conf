@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
   -- use 'olimorris/onedarkpro.nvim'
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
+  use 'nvim-treesitter/nvim-treesitter-context'
   use 'folke/tokyonight.nvim'
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -86,12 +87,10 @@ return require('packer').startup(function(use)
   use('jose-elias-alvarez/null-ls.nvim')
 
   -- Bottom Line --
-  -- use {
-  --   'nvim-lualine/lualine.nvim',
-  --   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  -- }
-  use 'feline-nvim/feline.nvim'
-  -- use 'feline-nvim/feline.nvim'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   use { "catppuccin/nvim", as = "catppuccin" }
   use "marko-cerovac/material.nvim"
   use 'numToStr/Comment.nvim'

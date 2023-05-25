@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/home/artem/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
-  ["feline.nvim"] = {
-    loaded = true,
-    path = "/home/artem/.local/share/nvim/site/pack/packer/start/feline.nvim",
-    url = "https://github.com/feline-nvim/feline.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/artem/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -149,6 +144,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/artem/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/artem/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = false,
@@ -222,6 +222,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/artem/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/artem/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
   ["nvim-web-devicons"] = {
     loaded = true,

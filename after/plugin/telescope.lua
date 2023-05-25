@@ -1,8 +1,11 @@
 local builtin = require('telescope.builtin')
 
-require('telescope').setup {
+local status, telescope = pcall(require, "telescope")
+if (not status) then return end
+
+telescope.setup {
   defaults = {
-    file_ignore_patterns = { "node%_modules/.*" },
+    -- file_ignore_patterns = { "node%_modules/.*" },
     mappings = {
       i = {
         ["<C-h>"] = "which_key",
@@ -23,6 +26,7 @@ require('telescope').setup {
       theme = "ivy",
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
+      cwd_to_path = true,
       mappings = {
         ["i"] = {
           -- your custom insert mode mappings
@@ -37,7 +41,23 @@ require('telescope').setup {
 
 require("telescope").load_extension "file_browser"
 
-vim.keymap.set('n', '<leader>br', ':Telescope file_browser<cr>')
+local function telescope_buffer_dir()
+  return vim.fn.expand('%:p:h')
+end
+
+vim.keymap.set("n", "<leader>br", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h",
+    cwd = telescope_buffer_dir(),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 40 }
+  })
+end)
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>FF', ':Telescope find_files hidden=true<cr>')
